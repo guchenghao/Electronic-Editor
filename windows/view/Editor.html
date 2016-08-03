@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="guchenghao">
+        <meta name="description" content="A Simple Editor">
+        <title>Sakura Editor</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../public/libs/bootstrap/dist/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="../../public/libs/font-awesome/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="../../public/css/editor.min.css">
+        <!-- <link rel="stylesheet" href="../../public/libs/animate.css/animate.min.css"> -->
+    </head>
+
+    <body>
+        <!--  帮助框-->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    CmdOrCtrl+Alt+H可以查看编辑器的快捷键
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 改变主题和语言的框 -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group">
+                            <label for="language">语言:
+                                <select class="form-control" id="language">
+                                    <option value="javascript" selected="on">javascript</option>
+                                    <option value="css">css</option>
+                                    <option value="html">html</option>
+                                    <option value="markdown">markdown</option>
+                                </select>
+                            </label>
+                            <br>
+
+                            <label for="theme">主题:
+                                <select class="form-control" id="theme">
+                                    <option value="tomorrow">tomorrow</option>
+                                    <option value="tomorrow_night" selected="on">tomorrow_night</option>
+                                </select>
+                            </label>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="save">Save</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="settings">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前所在位置:&nbsp;<span id="pos"></span> 当前代码行数:&nbsp;
+            <span id="cnum" onchange="getLines()"></span> &nbsp;&nbsp; GoTo:
+            <input type="number" id="line" onchange="gotoLine(this.value)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:void(0)" role="button" data-toggle="modal" data-target=".bs-example-modal-sm" id="help">help</a>
+            <div class="langchange">
+                <a href="javascript:void(0)" tabindex="0" id="change" data-toggle="modal" data-target="#myModal" role="button"><span id="lang">javascript</span></a>
+            </div>
+        </div>
+        <div id="CodeEditor"></div>
+
+        <script>
+            if (typeof module === 'object') {
+                window.module = module;
+                module = undefined;
+            }
+
+        </script>
+
+        <script src="../../public/libs/ace-builds/src/ace.js"></script>
+
+
+        <script src="../../public/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+        <script src="../../public/libs/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+
+        <script type="text/javascript" src="../../public/libs/ace-builds/src/ext-language_tools.js"></script>
+
+        <script src="../../public/libs/ace-builds/src/ext-keybinding_menu.js"></script>
+
+        <script type="text/javascript" src="../../public/libs/ace-builds/src/ext-statusbar.js"></script>
+
+        <script src="../../public/libs/ace-builds/src/mode-javascript.js"></script>
+
+        <!-- <script src="../../public/libs/ace-builds/src/mode-markdown.js"></script> -->
+
+        <!-- <script src="../../public/libs/ace-builds/src/theme-tomorrow.js"></script> -->
+
+        <script src="../../public/libs/ace-builds/src/theme-tomorrow_night.js"></script>
+
+
+        <script type="text/javascript">
+            const aceEditor = require("../controllor/codeditor");
+
+            aceEditor.create();
+            require("../controllor/menu");
+            require("../controllor/popup");
+
+        </script>
+
+        <script src="../controllor/statusbar.js"></script>
+
+
+        <script>
+            if (window.module) {
+                module = window.module;
+            }
+
+        </script>
+
+
+    </body>
+
+</html>

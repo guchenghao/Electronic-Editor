@@ -4,7 +4,7 @@
   "description": "A Simple Code Editor(power by ace.js)",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "/Applications/Electron.app/Contents/MacOS/Electron ."
   },
   "keywords": [
     "Editor",

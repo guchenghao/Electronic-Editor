@@ -9,6 +9,7 @@ const Codeditor = require("./codeditor");
 const Menu = remote.Menu;
 const dialog = remote.dialog;
 const app = remote.app;
+const BrowserWindow = remote.BrowserWindow;
 
 
 
@@ -16,6 +17,23 @@ var template = [
 	{
 		label: "File",
 		submenu: [
+			{
+				label: "New Window",
+				accelerator: "CmdOrCtrl+shift+N",
+				click: function () {
+					var windows = new BrowserWindow({
+						width: 800,
+						height: 600,
+						resizable: true,
+						title: "Sakura",
+						titleBarStyle: "default",
+						webPreferences: {
+							webSecurity: false
+						}
+					});
+
+				}
+			},
 			{
 				label: "open...",
 				accelerator: "CmdOrCtrl+O",
@@ -29,6 +47,14 @@ var template = [
 							{
 								name: 'markdown',
 								extensions: ['md']
+							},
+							{
+								name: "css",
+								extensions: ["css"]
+							},
+							{
+								name: "html",
+								extensions: ["html"]
 							}
             ]
 					}, function (fileNames) {
@@ -68,16 +94,16 @@ var template = [
 						}
 
 
-							fs.writeFile(fileName, code, function (err) {
-								if (err) {
-									console.log(err);
-								}
+						fs.writeFile(fileName, code, function (err) {
+							if (err) {
+								console.log(err);
+							}
 
-								dialog.showMessageBox({
-									message: "The Codefile has been saved!^_^",
-									buttons: ["OK"]
-								});
+							dialog.showMessageBox({
+								message: "The Codefile has been saved!^_^",
+								buttons: ["OK"]
 							});
+						});
 
 
 					});
@@ -188,7 +214,7 @@ var template = [
 				label: 'Learn More',
 				click: function () {
 					require('electron')
-						.shell.openExternal('http://electron.atom.io');
+						.shell.openExternal("https://github.com/guchenghao/Electronic-Editor");
 				}
       }
     ]

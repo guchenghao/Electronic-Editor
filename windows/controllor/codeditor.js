@@ -49,12 +49,12 @@ class AceEditor {
 
 
 	static changeTheme(theme) {
-		if (theme === "ace/theme/tomorrow_night") {
-			Common.EDITOR_THEME = "ace/theme/tomorrow";
+		if (theme === "tomorrow_night") {
+			Common.EDITOR_THEME = "ace/theme/tomorrow_night";
 		}
 
-		if (theme === "ace/theme/tomorrow") {
-			Common.EDITOR_THEME = "ace/theme/tomorrow_night";
+		if (theme === "tomorrow") {
+			Common.EDITOR_THEME = "ace/theme/tomorrow";
 		}
 	}
 

@@ -11,7 +11,6 @@ const EditorWindow = require("./windows/controllor/Editor");
 
 app.setName("Electronic Editor");
 
-
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit();
@@ -34,6 +33,8 @@ class ElectronicEditor {
 			this.createEditorWindow();
 
 			this.editorWindow.loadURL(`file://${__dirname}/windows/view/Editor.html`);
+
+			// console.log(`file://${__dirname}/windows/view/Editor.html`);
 		});
 
 

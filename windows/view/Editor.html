@@ -11,8 +11,9 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="../../public/libs/bootstrap/dist/css/bootstrap.min.css">
-        <!-- <link rel="stylesheet" href="../../public/libs/font-awesome/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="../../public/libs/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../../public/css/editor.min.css">
+        <link rel="stylesheet" href="../../public/libs/github-markdown-css/github-markdown.css" media="screen">
         <!-- <link rel="stylesheet" href="../../public/libs/animate.css/animate.min.css"> -->
     </head>
 
@@ -21,21 +22,21 @@
         <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    CmdOrCtrl+Alt+H可以查看编辑器的快捷键
+                    1. CmdOrCtrl+Alt+H可以查看编辑器的快捷键
+                    <br> 2. 这个代码编辑器的快捷键gotoline暂时无法使用
                 </div>
             </div>
         </div>
-
-
-
 
         <!-- 改变主题和语言的框 -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">设置</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-group">
@@ -55,10 +56,21 @@
                                     <option value="tomorrow_night" selected="on">tomorrow_night</option>
                                 </select>
                             </label>
+
+                            <br>
+
+                            <label for="fontSize">字体大小：
+                                <select class="form-control" id="fontSize">
+                                    <option value="14px">14px</option>
+                                    <option value="16px" selected="on">16px</option>
+                                    <option value="18px">18px</option>
+                                    <option value="20px">20px</option>
+                                </select>
+                            </label>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" id="save">Save</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="save" onclick="change()"><i class="fa fa-wrench"></i>&nbsp;确定</button>
 
                     </div>
                 </div>
@@ -66,14 +78,18 @@
         </div>
         <div id="settings">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前所在位置:&nbsp;<span id="pos"></span> 当前代码行数:&nbsp;
-            <span id="cnum" onchange="getLines()"></span> &nbsp;&nbsp; GoTo:
+            <input type="text" id="cnum" onchange="getCodeLine()"> &nbsp;&nbsp; &nbsp;GoTo:
             <input type="number" id="line" onchange="gotoLine(this.value)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="javascript:void(0)" role="button" data-toggle="modal" data-target=".bs-example-modal-sm" id="help">help</a>
+            <a href="javascript:void(0)" role="button" data-toggle="modal" data-target=".bs-example-modal-sm" id="help"><i class="fa fa-heart"></i>&nbsp;help</a>
             <div class="langchange">
-                <a href="javascript:void(0)" tabindex="0" id="change" data-toggle="modal" data-target="#myModal" role="button"><span id="lang">javascript</span></a>
+                <a href="javascript:void(0)" tabindex="0" id="change" data-toggle="modal" data-target="#myModal" role="button">
+                    <i class="fa fa-cog fa-spin"></i>
+                    <span id="lang">javascript</span>
+                </a>
             </div>
         </div>
         <div id="CodeEditor"></div>
+        <div id="mdPreview"></div>
 
         <script>
             if (typeof module === 'object') {
@@ -84,7 +100,6 @@
         </script>
 
         <script src="../../public/libs/ace-builds/src/ace.js"></script>
-
 
         <script src="../../public/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
 
@@ -98,15 +113,19 @@
 
         <script src="../../public/libs/ace-builds/src/mode-javascript.js"></script>
 
-        <!-- <script src="../../public/libs/ace-builds/src/mode-markdown.js"></script> -->
+        <script src="../../public/libs/ace-builds/src/mode-markdown.js"></script>
 
-        <!-- <script src="../../public/libs/ace-builds/src/theme-tomorrow.js"></script> -->
+        <script src="../../public/libs/ace-builds/src/mode-html.js"></script>
+
+        <script src="../../public/libs/ace-builds/src/mode-css.js"></script>
+
+        <script src="../../public/libs/ace-builds/src/theme-tomorrow.js"></script>
 
         <script src="../../public/libs/ace-builds/src/theme-tomorrow_night.js"></script>
 
-
         <script type="text/javascript">
             const aceEditor = require("../controllor/codeditor");
+            const Common = require("../../common");
 
             aceEditor.create();
             require("../controllor/menu");
@@ -114,8 +133,7 @@
 
         </script>
 
-        <script src="../controllor/statusbar.js"></script>
-
+        <script src="../controllor/handler.js"></script>
 
         <script>
             if (window.module) {
@@ -123,7 +141,6 @@
             }
 
         </script>
-
 
     </body>
 

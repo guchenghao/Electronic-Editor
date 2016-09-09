@@ -1,27 +1,29 @@
 {
-  "name": "electronic-editor",
-  "description": "A Simple Code Editor(power by ace.js)",
-  "main": "main.js",
-  "authors": [
-    "guchenghao"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "Editor",
-    "Electron"
-  ],
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "public/libs",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "ace-builds": "ace-build#^1.2.4",
-    "font-awesome": "^4.6.3",
-    "bootstrap": "^3.3.7"
-  }
+    "name": "electronic-editor",
+    "description": "A Simple Code Editor(power by ace.js)",
+    "main": "main.js",
+    "authors": [
+        "guchenghao"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "Editor",
+        "Electron",
+        "Ace.js"
+    ],
+    "homepage": "",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "public/libs",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "ace-builds": "ace-build#^1.2.4",
+        "font-awesome": "^4.6.3",
+        "bootstrap": "^3.3.7",
+        "github-markdown-css": "^2.4.0"
+    }
 }

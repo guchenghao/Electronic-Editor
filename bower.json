@@ -24,6 +24,7 @@
         "ace-builds": "ace-build#^1.2.4",
         "font-awesome": "^4.6.3",
         "bootstrap": "^3.3.7",
-        "github-markdown-css": "^2.4.0"
+        "github-markdown-css": "^2.4.0",
+        "marked": "^0.3.4"
     }
 }

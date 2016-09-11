@@ -61,6 +61,7 @@
 
                             <label for="fontSize">字体大小：
                                 <select class="form-control" id="fontSize">
+                                  <option value="12px" selected="on">12px</option>
                                     <option value="14px">14px</option>
                                     <option value="16px" selected="on">16px</option>
                                     <option value="18px">18px</option>
@@ -89,7 +90,7 @@
             </div>
         </div>
         <div id="CodeEditor"></div>
-        <div id="mdPreview"></div>
+        <div id="preview" class="markdown-body"></div>
 
         <script>
             if (typeof module === 'object') {
@@ -122,6 +123,8 @@
         <script src="../../public/libs/ace-builds/src/theme-tomorrow.js"></script>
 
         <script src="../../public/libs/ace-builds/src/theme-tomorrow_night.js"></script>
+
+        <script src="../../public/libs/marked/marked.min.js"></script>
 
         <script type="text/javascript">
             const aceEditor = require("../controllor/codeditor");

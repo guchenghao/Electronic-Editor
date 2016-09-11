@@ -8,8 +8,8 @@ function gotoLine(n) {
 
 function change() {
 
-	setTheme();
 	setMode();
+	setTheme();
 	setFontSize();
 
 }
@@ -42,6 +42,8 @@ function setTheme() {
 
 function setMode() {
 	var aText = document.getElementById("lang");
+	var mdView = $("#preview");
+	var codeditor = $("#CodeEditor");
 
 	//修改编辑器的语言模式
 	var selectLang = document.getElementById("language");
@@ -56,6 +58,25 @@ function setMode() {
 	ace.edit("CodeEditor")
 		.getSession()
 		.setMode(Common.LANGUAGE_MODE);
+
+  //实现一个实时预览的markdown编辑器
+	if (Common.LANGUAGE_MODE === "ace/mode/markdown") {
+
+		mdView.addClass("pull-right");
+		codeditor.addClass("pull-left");
+		codeditor.css('width', '49.5%');
+		mdView.css('display', 'block');
+		mdView.css('width', '50%');
+		mdView.css('height', '100%');
+
+		$("#CodeEditor")
+			.keyup(function () {
+				$("#preview")
+					.html(marked(ace.edit("CodeEditor")
+						.getValue()));
+			});
+	}
+
 }
 
 

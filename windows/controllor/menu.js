@@ -10,6 +10,7 @@ const Menu = remote.Menu;
 const dialog = remote.dialog;
 const app = remote.app;
 const BrowserWindow = remote.BrowserWindow;
+const path = require("path");
 
 
 
@@ -31,7 +32,7 @@ var template = [
 							webSecurity: false
 						}
 					});
-
+					windows.loadURL("file://" + path.resolve(__dirname,"../view/Editor.html"));
 				}
 			},
 			{

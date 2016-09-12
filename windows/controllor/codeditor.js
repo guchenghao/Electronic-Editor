@@ -11,7 +11,6 @@ class AceEditor {
 
 	}
 
-
 	static create() {
 		ace.require("ace/ext/language_tools");
 
@@ -24,7 +23,7 @@ class AceEditor {
 			enableBasicAutocompletion: true,
 			enableSnippets: true,
 			enableLiveAutocompletion: true,
-			autoScrollEditorIntoView: true
+			autoScrollEditorIntoView: false
 		});
 
 		var StatusBar = ace.require("ace/ext/statusbar")

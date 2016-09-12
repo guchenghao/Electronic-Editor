@@ -24,7 +24,7 @@ class EditorWindow {
 			height: 600,
 			resizable: true,
 			title: "Sakura",
-			icon: "./assets/icon.icns",
+			icon: "../../assets/icon.icns",
 			titleBarStyle: "default",
 			// frame: false,
 			webPreferences: {

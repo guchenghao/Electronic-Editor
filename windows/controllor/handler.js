@@ -59,7 +59,7 @@ function setMode() {
 		.getSession()
 		.setMode(Common.LANGUAGE_MODE);
 
-  //实现一个实时预览的markdown编辑器
+	//实现一个实时预览的markdown编辑器
 	if (Common.LANGUAGE_MODE === "ace/mode/markdown") {
 
 		mdView.addClass("pull-right");
@@ -69,6 +69,8 @@ function setMode() {
 		mdView.css('width', '50%');
 		mdView.css('height', '100%');
 
+
+		//监听键盘按键的事件
 		$("#CodeEditor")
 			.keyup(function () {
 				$("#preview")

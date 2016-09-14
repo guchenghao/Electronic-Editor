@@ -36,7 +36,7 @@ var template = [
 				}
 			},
 			{
-				label: "open...",
+				label: "Open File...",
 				accelerator: "CmdOrCtrl+O",
 				click: function () {
 					dialog.showOpenDialog({
@@ -71,7 +71,7 @@ var template = [
 				}
 			},
 			{
-				label: "Save...",
+				label: "Save File...",
 				accelerator: "CmdOrCtrl+S",
 				click: function () {
 
@@ -217,7 +217,26 @@ var template = [
 					require('electron')
 						.shell.openExternal("https://github.com/guchenghao/Electronic-Editor");
 				}
-      }
+      },
+			{
+				label: "Author",
+				click: function () {
+					var authorWindow = new BrowserWindow({
+						width: 800,
+						height: 600,
+						resizable: true,
+						title: "guchenghao",
+						// frame: false,
+						titleBarStyle: "hidden-inset",
+						webPreferences: {
+							webSecurity: false
+						}
+					});
+
+					authorWindow.loadURL("file://" + path.resolve(__dirname,"../view/author.html"));
+
+				}
+			}
     ]
 }
 ];

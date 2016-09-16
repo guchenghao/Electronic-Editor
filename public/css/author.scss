@@ -1,3 +1,44 @@
-.topBox {
-    margin-top: 20px;
+body {
+    border: 0;
+    margin: 0;
+    background-color: rgba(4,108,95,.8);
+
+    .weixin {
+      display: block;
+      text-align: center;
+    }
+
+    .topBox {
+        margin-top: 25px;
+        color: whitesmoke;
+
+        .introduction {
+            font-size: 20px;
+        }
+
+        .img-me {
+          margin: 0 auto;
+        }
+    }
+
+    .hrline {
+        background-color: rgba(232,232,232,.79);
+        width: 70%;
+        height: 1.5px;
+        margin: 20px auto;
+    }
+
+    .copyright {
+        color: whitesmoke;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .center {
+        display: block;
+        text-align: center;
+        margin-top: 8px;
+        color: whitesmoke;
+        font-size: 22px;
+    }
 }

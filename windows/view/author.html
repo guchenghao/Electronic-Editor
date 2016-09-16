@@ -15,54 +15,122 @@
     </head>
 
     <body>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                        <h4 class="modal-title" id="myModalLabel">设置</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="lead text-danger text-center">
+                            欢迎加我的微信，我们可以互相聊技术！
+                        </p>
+                        <a href="https://wx2.qq.com/">
+                            <img src="https://github.com/guchenghao/Picture-Utilize/blob/master/wechat.png?raw=true" alt="微信号（gch18270389096）" class="img-thumbnail weixin" />
+                        </a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="save" onclick=""><i class="fa fa-check-square"></i>&nbsp;取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container topBox">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class=""></h3>
-                    <h4></h4>
-                    <p class="lead"></p>
-                    <button type="button" class="btn btn-default btn-lg">约起来</button>
+                    <h3 class="name">辜承昊</h3>
+                    <h4>~~~~不会放电的皮卡丘</h4>
+                    <p class="lead introduction">
+                        本人热爱编程技术,学以致用,在实践中不断学习新技能。在学习技术的同时,扩展自己的社交面,增强自己的社交能力。不怕碰到难题,在碰到问题时,会用心解决以及虚心请教前辈。大一时期担任班级心理委员负责组织班级相关活动,锻炼了自己的沟通能力,打破了高中期间过于封闭自我的状态。大二上学期开始担任武汉理工大学开源技术协会前端组负责人,负责前端开发工作,同时也积极参加一些小项目的开发。
+                    </p>
+                    <button type="button" class="btn btn-default active btn-lg" data-toggle="modal" data-target="#myModal" tabindex="0">约起来</button>
                 </div>
                 <div class="col-sm-6">
-                    <img src="" alt="辜承昊(guchenghao)" />
+                    <img src="https://github.com/guchenghao/Picture-Utilize/blob/master/guchenghao(1).jpg?raw=true" alt="辜承昊(guchenghao)" class="img-thumbnail img-me" />
                 </div>
             </div>
         </div>
+
+        <div class="divider hrline"></div>
+
+
         <div class="container">
             <div class="col-sm-4">
-                <div class="text-center"></div>
-                <h3></h3>
-                <p class="lead"></p>
+                <div class="text-center">
+                    <span class="fa-3x fa-stack">
+                       <i class="fa fa-circle-o fa-stack-2x fa-inverse"></i>
+                       <i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <a class="center" href="https://ace.c9.io/#nav=about" target="_blank">Ace.js</a>
+                <br>
+                <p class="lead center">
+                    Ace is an embeddable code editor written in JavaScript. It matches the features and performance of native editors such as Sublime, Vim and TextMate. It can be easily embedded in any web page and JavaScript application. Ace is maintained as the primary
+                    editor for Cloud9 IDE and is the successor of the Mozilla Skywriter (Bespin) project.
+                </p>
             </div>
             <div class="col-sm-4">
-                <div class="text-center"></div>
-                <h3></h3>
-                <p class="lead"></p>
+                <div class="text-center">
+                    <span class="fa-3x fa-stack">
+                     <i class="fa fa-circle-o fa-stack-2x fa-inverse"></i>
+                     <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
+                  </span>
+                </div>
+                <a class="center" href="http://electron.atom.io/" target="_blank">Electron</a>
+                <p class="lead center">
+                    Electron is a framework for creating native applications with web technologies like JavaScript, HTML, and CSS. It takes care of the hard parts so you can focus on the core of your application.Electron is based on Atom which is a hackable editor.
+                </p>
             </div>
             <div class="col-sm-4">
-                <div class="text-center"></div>
-                <h3></h3>
-                <p class="lead"></p>
+                <div class="text-center">
+                    <span class="fa-3x fa-stack">
+                      <i class="fa fa-circle-o fa-stack-2x fa-inverse"></i>
+                      <i class="fa fa-git fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <a class="center" href="https://git-scm.com/" target="_blank">Git</a>
+                <p class="lead center">Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Git is easy to learn and has a tiny footprint with lightning fast performance.It
+                    outclasses SCM tools like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, convenient staging areas, and multiple workflows.
+                </p>
             </div>
         </div>
+
+        <div class="divider hrline"></div>
+
+
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-8 col-md-offset-2">
                     <div class="col-sm-3 text-center">
-                        <a href="#"></a>
+                        <a href="https://www.facebook.com/guchenghao66" target="_blank">
+                            <i class="fa fa-facebook-square fa-5x fa-inverse"></i>
+                        </a>
                     </div>
                     <div class="col-sm-3 text-center">
-                        <a href="#"></a>
+                        <a href="https://github.com/guchenghao" target="_blank">
+                            <i class="fa fa-github-square fa-5x fa-inverse"></i>
+                        </a>
                     </div>
                     <div class="col-sm-3 text-center">
-                        <a href="#"></a>
+                        <a href="https://www.instagram.com/gch.alex/" target="_blank">
+                            <i class="fa fa-instagram fa-5x fa-inverse"></i>
+                        </a>
                     </div>
                     <div class="col-sm-3 text-center">
-                        <a href="#"></a>
+                        <a href="https://www.freecodecamp.com/guchenghao" target="_blank">
+                            <i class="fa fa-fire fa-5x fa-inverse"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="divider hrline footer"></div>
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
@@ -74,6 +142,27 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            if (typeof module === 'object') {
+                window.module = module;
+                module = undefined;
+            }
+
+        </script>
+
+        <script src="../../public/libs/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+        <script src="../../public/libs/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+
+        <script src="../controllor/popup.js" charset="utf-8"></script>
+
+        <script>
+            if (window.module) {
+                module = window.module;
+            }
+
+        </script>
     </body>
 
 </html>

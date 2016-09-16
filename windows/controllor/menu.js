@@ -222,8 +222,8 @@ var template = [
 				label: "Author",
 				click: function () {
 					var authorWindow = new BrowserWindow({
-						width: 800,
-						height: 600,
+						width: 1000,
+						height: 800,
 						resizable: true,
 						title: "guchenghao",
 						// frame: false,
